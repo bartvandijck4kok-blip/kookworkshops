@@ -24,7 +24,6 @@ body {
     line-height: 1.6;
 }
 
-/* Logo */
 header {
     background: #eee5d6;
     text-align: center;
@@ -39,7 +38,6 @@ header img {
     margin: auto;
 }
 
-/* Navigatie */
 nav {
     background: #244638;
     text-align: center;
@@ -57,7 +55,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Inhoud */
 main {
     max-width: 1100px;
     margin: auto;
@@ -77,7 +74,6 @@ h1, h2 {
     font-size: 32px;
 }
 
-/* Zoekveld */
 .zoeken {
     text-align: center;
     margin: 30px auto;
@@ -92,7 +88,6 @@ h1, h2 {
     font-size: 16px;
 }
 
-/* Kaarten */
 .kaarten {
     display: grid;
     grid-template-columns:
@@ -102,12 +97,15 @@ h1, h2 {
 }
 
 .kaart {
+    display: block;
     background: white;
     border: 1px solid #e1d9ca;
     border-radius: 10px;
     padding: 25px 15px;
     text-align: center;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    color: inherit;
+    text-decoration: none;
 }
 
 .kaart h3 {
@@ -118,9 +116,26 @@ h1, h2 {
 .kaart p {
     color: #777;
     font-size: 14px;
+    margin-bottom: 0;
 }
 
-/* Secties */
+.kaart-actief:hover {
+    border-color: #244638;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.kaart-actief {
+    cursor: pointer;
+}
+
+.receptlink {
+    display: block;
+    margin-top: 12px;
+    color: #244638;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 section {
     margin-bottom: 55px;
 }
@@ -130,7 +145,6 @@ section {
     padding-bottom: 8px;
 }
 
-/* Footer */
 footer {
     background: #244638;
     color: white;
@@ -186,7 +200,8 @@ footer {
           placeholder="Zoek een recept..."
           aria-label="Zoek een recept"
           oninput="zoekRecepten()">
-        <p id="zoekmelding" aria-live="polite"></p>
+
+        <div id="zoekresultaten" aria-live="polite"></div>
     </div>
 </section>
 
@@ -196,35 +211,41 @@ footer {
     </h2>
 
     <div class="kaarten">
-        <div class="kaart">
-            <h3>Aperitief & hapjes</h3>
-            <p>Ontdek de recepten</p>
-        </div>
 
         <div class="kaart">
-            <h3>Voorgerechten</h3>
-            <p>Ontdek de recepten</p>
+            <h3>Aperitief & hapjes</h3>
+            <p>Binnenkort recepten</p>
         </div>
+
+        <a class="kaart kaart-actief"
+           href="sopa-de-tortilla.html">
+            <h3>Voorgerechten</h3>
+            <p>1 recept beschikbaar</p>
+            <span class="receptlink">
+                Sopa de tortilla
+            </span>
+        </a>
 
         <div class="kaart">
             <h3>Hoofdgerechten</h3>
-            <p>Ontdek de recepten</p>
+            <p>Binnenkort recepten</p>
         </div>
 
         <div class="kaart">
             <h3>Bijgerechten</h3>
-            <p>Ontdek de recepten</p>
+            <p>Binnenkort recepten</p>
         </div>
 
         <div class="kaart">
             <h3>Desserts</h3>
-            <p>Ontdek de recepten</p>
+            <p>Binnenkort recepten</p>
         </div>
 
         <div class="kaart">
             <h3>Basisbereidingen</h3>
-            <p>Ontdek de recepten</p>
+            <p>Binnenkort recepten</p>
         </div>
+
     </div>
 </section>
 
@@ -234,16 +255,52 @@ footer {
     </h2>
 
     <div class="kaarten">
-        <div class="kaart"><h3>België</h3></div>
-        <div class="kaart"><h3>Frankrijk</h3></div>
-        <div class="kaart"><h3>Italië</h3></div>
-        <div class="kaart"><h3>Thailand</h3></div>
-        <div class="kaart"><h3>Mexico</h3></div>
-        <div class="kaart"><h3>Japan</h3></div>
-        <div class="kaart"><h3>Marokko</h3></div>
-        <div class="kaart"><h3>Groot-Brittannië</h3></div>
-        <div class="kaart"><h3>Verenigde Staten</h3></div>
-        <div class="kaart"><h3>India</h3></div>
+
+        <div class="kaart">
+            <h3>België</h3>
+        </div>
+
+        <div class="kaart">
+            <h3>Frankrijk</h3>
+        </div>
+
+        <div class="kaart">
+            <h3>Italië</h3>
+        </div>
+
+        <div class="kaart">
+            <h3>Thailand</h3>
+        </div>
+
+        <a class="kaart kaart-actief"
+           href="sopa-de-tortilla.html">
+            <h3>Mexico</h3>
+            <p>1 recept beschikbaar</p>
+            <span class="receptlink">
+                Sopa de tortilla
+            </span>
+        </a>
+
+        <div class="kaart">
+            <h3>Japan</h3>
+        </div>
+
+        <div class="kaart">
+            <h3>Marokko</h3>
+        </div>
+
+        <div class="kaart">
+            <h3>Groot-Brittannië</h3>
+        </div>
+
+        <div class="kaart">
+            <h3>Verenigde Staten</h3>
+        </div>
+
+        <div class="kaart">
+            <h3>India</h3>
+        </div>
+
     </div>
 </section>
 
@@ -275,21 +332,53 @@ footer {
 </footer>
 
 <script>
+const recepten = [
+    {
+        naam: "Sopa de tortilla",
+        land: "Mexico",
+        categorie: "Voorgerecht",
+        url: "sopa-de-tortilla.html"
+    }
+];
+
 function zoekRecepten() {
     const invoer = document
         .getElementById("zoekveld")
-        .value.trim();
+        .value.trim().toLowerCase();
 
-    const melding = document
-        .getElementById("zoekmelding");
+    const resultaten = document
+        .getElementById("zoekresultaten");
 
-    if (invoer.length === 0) {
-        melding.textContent = "";
-    } else {
-        melding.textContent =
-            "Binnenkort kun je hier zoeken " +
-            "in mijn receptenbibliotheek.";
+    resultaten.replaceChildren();
+
+    if (invoer === "") {
+        return;
     }
+
+    const gevonden = recepten.filter(recept =>
+        recept.naam.toLowerCase().includes(invoer) ||
+        recept.land.toLowerCase().includes(invoer) ||
+        recept.categorie.toLowerCase().includes(invoer)
+    );
+
+    if (gevonden.length === 0) {
+        resultaten.textContent =
+            "Geen recepten gevonden.";
+        return;
+    }
+
+    gevonden.forEach(recept => {
+        const regel = document.createElement("p");
+        const link = document.createElement("a");
+
+        link.href = recept.url;
+        link.textContent = recept.naam;
+        link.style.color = "#244638";
+        link.style.fontWeight = "bold";
+
+        regel.appendChild(link);
+        resultaten.appendChild(regel);
+    });
 }
 </script>
 
