@@ -61,13 +61,9 @@ h1, h2 {
     color: #244638;
 }
 
-h1 {
-    margin-bottom: 10px;
-}
-
 .info {
     color: #666;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .receptblok {
@@ -92,6 +88,61 @@ h1 {
 .bereiding li {
     margin-bottom: 18px;
     padding-left: 5px;
+}
+
+/* Aantal personen */
+.porties {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    background: #eee5d6;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.porties strong {
+    margin-right: auto;
+}
+
+.portieknoppen {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.portieknoppen button {
+    background: #244638;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.portieknoppen button:hover {
+    background: #37634e;
+}
+
+.portieknoppen button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#personen {
+    min-width: 25px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.opmerking {
+    font-size: 13px;
+    color: #666;
+    margin-top: 15px;
 }
 
 .terug {
@@ -146,30 +197,40 @@ footer {
 <h1>Sopa de tortilla</h1>
 
 <p class="info">
-    Mexico | Voorgerecht | 4 personen
+    Mexico | Voorgerecht |
+    Basisrecept voor 4 personen
 </p>
+
+<div class="porties">
+    <strong>Aantal personen</strong>
+
+    <div class="portieknoppen">
+        <button
+          type="button"
+          id="minder"
+          onclick="wijzigPersonen(-1)"
+          aria-label="Eén persoon minder">−</button>
+
+        <span id="personen" aria-live="polite">4</span>
+
+        <button
+          type="button"
+          id="meer"
+          onclick="wijzigPersonen(1)"
+          aria-label="Eén persoon meer">+</button>
+    </div>
+</div>
 
 <section class="receptblok">
 <h2>Ingrediënten</h2>
 
-<ul class="ingredienten">
-    <li>6 stuks maïstortilla</li>
-    <li>400 g tomaten</li>
-    <li>100 g witte ui</li>
-    <li>2 teen look</li>
-    <li>1 stuk gedroogde pasillapeper</li>
-    <li>1 stuk chipotlepeper in adobosaus</li>
-    <li>750 ml kippenbouillon</li>
-    <li>20 ml zonnebloemolie</li>
-    <li>1 g gedroogde oregano</li>
-    <li>1 stuk avocado</li>
-    <li>60 g feta</li>
-    <li>60 g zure room</li>
-    <li>10 g koriander</li>
-    <li>1 stuk limoen</li>
-    <li>zout</li>
-    <li>zwarte peper</li>
-</ul>
+<ul class="ingredienten" id="ingredientenlijst"></ul>
+
+<p class="opmerking">
+    De hoeveelheden worden evenredig aangepast.
+    Bij hele producten kunnen deelhoeveelheden
+    voorkomen. Rond deze zelf af waar nodig.
+</p>
 </section>
 
 <section class="receptblok">
@@ -177,17 +238,19 @@ footer {
 
 <ol class="bereiding">
     <li>
-        Verwarm de oven voor op 200 °C. Snijd de
-        maïstortilla's in dunne repen. Meng ze met
-        10 ml zonnebloemolie en een beetje zout.
-        Verdeel ze over een bakplaat en bak ze
-        8 tot 10 minuten krokant. Schep ze
-        halverwege om.
+        Verwarm de oven voor op 200 °C.
+        Snijd de maïstortilla's in dunne repen.
+        Meng ze met 10 ml zonnebloemolie
+        en een beetje zout.
+        Verdeel ze over een bakplaat en
+        bak ze 8 tot 10 minuten krokant.
+        Schep ze halverwege om.
     </li>
 
     <li>
-        Verwijder de steel en zaadlijsten van de
-        pasillapeper. Rooster de peper ongeveer
+        Verwijder de steel en zaadlijsten
+        van de pasillapeper.
+        Rooster de peper ongeveer
         20 seconden per kant in een droge pan.
         Overgiet hem met 100 ml warme
         kippenbouillon en laat 10 minuten weken.
@@ -195,24 +258,28 @@ footer {
 
     <li>
         Snijd de tomaten en witte ui grof.
-        Pel de look. Mix de tomaten, witte ui,
-        look, geweekte pasillapeper,
+        Pel de look.
+        Mix de tomaten, witte ui, look,
+        geweekte pasillapeper,
         chipotlepeper en de gebruikte
         weekbouillon tot een gladde puree.
     </li>
 
     <li>
         Verhit de resterende zonnebloemolie
-        in een kookpot. Voeg de tomatenpuree
-        toe en laat 8 minuten zacht bakken
-        tot ze donkerder en iets dikker wordt.
+        in een kookpot.
+        Voeg de tomatenpuree toe en laat
+        8 minuten zacht bakken tot ze
+        donkerder en iets dikker wordt.
     </li>
 
     <li>
-        Voeg de resterende kippenbouillon en
-        de oregano toe. Breng aan de kook en
-        laat de soep 15 minuten zacht koken.
-        Breng op smaak met zout en zwarte peper.
+        Voeg de resterende kippenbouillon
+        en de oregano toe.
+        Breng aan de kook en laat de soep
+        15 minuten zacht koken.
+        Breng op smaak met zout en
+        zwarte peper.
     </li>
 
     <li>
@@ -230,6 +297,13 @@ footer {
         serveer meteen.
     </li>
 </ol>
+
+<p class="opmerking">
+    De bereidingsstappen zijn afkomstig
+    uit het oorspronkelijke recept voor
+    4 personen. Pas aantallen in de tekst
+    aan wanneer je het recept opschaalt.
+</p>
 </section>
 
 <a class="terug" href="index.html">
@@ -242,6 +316,87 @@ footer {
     &copy; 2026 Van Dijck Bart |
     Recepten & Kookworkshops
 </footer>
+
+<script>
+const basisPersonen = 4;
+let aantalPersonen = 4;
+
+const ingredienten = [
+    { naam: "maïstortilla", hoeveelheid: 6, eenheid: "stuks" },
+    { naam: "tomaten", hoeveelheid: 400, eenheid: "g" },
+    { naam: "witte ui", hoeveelheid: 100, eenheid: "g" },
+    { naam: "look", hoeveelheid: 2, eenheid: "teen" },
+    { naam: "gedroogde pasillapeper", hoeveelheid: 1, eenheid: "stuk" },
+    { naam: "chipotlepeper in adobosaus", hoeveelheid: 1, eenheid: "stuk" },
+    { naam: "kippenbouillon", hoeveelheid: 750, eenheid: "ml" },
+    { naam: "zonnebloemolie", hoeveelheid: 20, eenheid: "ml" },
+    { naam: "gedroogde oregano", hoeveelheid: 1, eenheid: "g" },
+    { naam: "avocado", hoeveelheid: 1, eenheid: "stuk" },
+    { naam: "feta", hoeveelheid: 60, eenheid: "g" },
+    { naam: "zure room", hoeveelheid: 60, eenheid: "g" },
+    { naam: "koriander", hoeveelheid: 10, eenheid: "g" },
+    { naam: "limoen", hoeveelheid: 1, eenheid: "stuk" },
+    { naam: "zout", hoeveelheid: null, eenheid: "" },
+    { naam: "zwarte peper", hoeveelheid: null, eenheid: "" }
+];
+
+function formaatGetal(getal) {
+    return Number(getal.toFixed(2))
+        .toLocaleString("nl-BE", {
+            maximumFractionDigits: 2
+        });
+}
+
+function toonIngredienten() {
+    const lijst = document.getElementById(
+        "ingredientenlijst"
+    );
+
+    lijst.replaceChildren();
+
+    ingredienten.forEach(ingredient => {
+        const regel = document.createElement("li");
+
+        if (ingredient.hoeveelheid === null) {
+            regel.textContent = ingredient.naam;
+        } else {
+            const hoeveelheid =
+                ingredient.hoeveelheid *
+                aantalPersonen / basisPersonen;
+
+            regel.textContent =
+                formaatGetal(hoeveelheid) + " " +
+                ingredient.eenheid + " " +
+                ingredient.naam;
+        }
+
+        lijst.appendChild(regel);
+    });
+
+    document.getElementById(
+        "personen"
+    ).textContent = aantalPersonen;
+
+    document.getElementById(
+        "minder"
+    ).disabled = aantalPersonen <= 1;
+
+    document.getElementById(
+        "meer"
+    ).disabled = aantalPersonen >= 20;
+}
+
+function wijzigPersonen(verschil) {
+    aantalPersonen = Math.max(
+        1,
+        Math.min(20, aantalPersonen + verschil)
+    );
+
+    toonIngredienten();
+}
+
+toonIngredienten();
+</script>
 
 </body>
 </html>
