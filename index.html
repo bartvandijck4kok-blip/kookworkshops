@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Van Dijck Bart | Recepten & Kookworkshops</title>
 
 <style>
@@ -31,20 +30,21 @@ header {
 }
 
 header img {
+    display: block;
     width: 100%;
     max-width: 650px;
     height: auto;
-    display: block;
     margin: auto;
 }
 
 nav {
     background: #244638;
-    text-align: center;
     padding: 16px;
+    text-align: center;
 }
 
 nav a {
+    display: inline-block;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -61,7 +61,7 @@ main {
     padding: 35px 20px;
 }
 
-h1, h2 {
+h1, h2, h3 {
     color: #244638;
 }
 
@@ -103,13 +103,12 @@ h1, h2 {
     border-radius: 10px;
     padding: 25px 15px;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     color: inherit;
     text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .kaart h3 {
-    color: #244638;
     margin: 0;
 }
 
@@ -119,21 +118,13 @@ h1, h2 {
     margin-bottom: 0;
 }
 
-.kaart-actief:hover {
-    border-color: #244638;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-}
-
 .kaart-actief {
     cursor: pointer;
 }
 
-.receptlink {
-    display: block;
-    margin-top: 12px;
-    color: #244638;
-    font-weight: bold;
-    text-decoration: underline;
+.kaart-actief:hover {
+    border-color: #244638;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
 section {
@@ -143,6 +134,41 @@ section {
 .sectie-titel {
     border-bottom: 2px solid #c9b99c;
     padding-bottom: 8px;
+}
+
+.resultaten {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.receptregel {
+    background: white;
+    border: 1px solid #e1d9ca;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.receptregel a {
+    color: #244638;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.receptregel a:hover {
+    text-decoration: underline;
+}
+
+.receptregel p {
+    color: #777;
+    font-size: 14px;
+    margin: 4px 0 0;
+}
+
+.melding {
+    color: #666;
+    text-align: center;
 }
 
 footer {
@@ -155,7 +181,6 @@ footer {
 
 @media (max-width: 600px) {
     nav a {
-        display: inline-block;
         margin: 7px;
     }
 
@@ -197,116 +222,31 @@ footer {
         <input
           type="search"
           id="zoekveld"
-          placeholder="Zoek een recept..."
+          placeholder="Zoek een recept, land of categorie..."
           aria-label="Zoek een recept"
           oninput="zoekRecepten()">
-
-        <div id="zoekresultaten" aria-live="polite"></div>
     </div>
 </section>
 
 <section id="categorieen">
-    <h2 class="sectie-titel">
-        Recepten per categorie
-    </h2>
-
-    <div class="kaarten">
-
-        <div class="kaart">
-            <h3>Aperitief & hapjes</h3>
-            <p>Binnenkort recepten</p>
-        </div>
-
-        <a class="kaart kaart-actief"
-           href="sopa-de-tortilla.html">
-            <h3>Voorgerechten</h3>
-            <p>1 recept beschikbaar</p>
-            <span class="receptlink">
-                Sopa de tortilla
-            </span>
-        </a>
-
-        <div class="kaart">
-            <h3>Hoofdgerechten</h3>
-            <p>Binnenkort recepten</p>
-        </div>
-
-        <div class="kaart">
-            <h3>Bijgerechten</h3>
-            <p>Binnenkort recepten</p>
-        </div>
-
-        <div class="kaart">
-            <h3>Desserts</h3>
-            <p>Binnenkort recepten</p>
-        </div>
-
-        <div class="kaart">
-            <h3>Basisbereidingen</h3>
-            <p>Binnenkort recepten</p>
-        </div>
-
-    </div>
+    <h2 class="sectie-titel">Recepten per categorie</h2>
+    <div class="kaarten" id="categoriekaarten"></div>
 </section>
 
 <section id="landen">
-    <h2 class="sectie-titel">
-        Recepten per land
+    <h2 class="sectie-titel">Recepten per land</h2>
+    <div class="kaarten" id="landkaarten"></div>
+</section>
+
+<section id="overzicht" hidden>
+    <h2 class="sectie-titel" id="overzichttitel">
+        Gevonden recepten
     </h2>
-
-    <div class="kaarten">
-
-        <div class="kaart">
-            <h3>België</h3>
-        </div>
-
-        <div class="kaart">
-            <h3>Frankrijk</h3>
-        </div>
-
-        <div class="kaart">
-            <h3>Italië</h3>
-        </div>
-
-        <div class="kaart">
-            <h3>Thailand</h3>
-        </div>
-
-        <a class="kaart kaart-actief"
-           href="sopa-de-tortilla.html">
-            <h3>Mexico</h3>
-            <p>1 recept beschikbaar</p>
-            <span class="receptlink">
-                Sopa de tortilla
-            </span>
-        </a>
-
-        <div class="kaart">
-            <h3>Japan</h3>
-        </div>
-
-        <div class="kaart">
-            <h3>Marokko</h3>
-        </div>
-
-        <div class="kaart">
-            <h3>Groot-Brittannië</h3>
-        </div>
-
-        <div class="kaart">
-            <h3>Verenigde Staten</h3>
-        </div>
-
-        <div class="kaart">
-            <h3>India</h3>
-        </div>
-
-    </div>
+    <div class="resultaten" id="receptresultaten"></div>
 </section>
 
 <section id="workshops">
     <h2 class="sectie-titel">Kookworkshops</h2>
-
     <p>
         Naast mijn recepten vind je hier later
         informatie over mijn kookworkshops,
@@ -316,7 +256,6 @@ footer {
 
 <section id="over">
     <h2 class="sectie-titel">Over mij</h2>
-
     <p>
         Welkom! Ik deel graag mijn passie voor
         koken, nieuwe smaken en het ontdekken
@@ -332,54 +271,203 @@ footer {
 </footer>
 
 <script>
-const recepten = [
-    {
-        naam: "Sopa de tortilla",
-        land: "Mexico",
-        categorie: "Voorgerecht",
-        url: "sopa-de-tortilla.html"
-    }
+let recepten = [];
+let laadfout = false;
+
+const categorieen = [
+    "Aperitief",
+    "Amuse",
+    "Voorgerecht",
+    "Tussengerecht",
+    "Hoofdgerecht",
+    "Bijgerecht",
+    "Dessert",
+    "Kaas",
+    "Koffie",
+    "Ontbijt",
+    "Basisbereiding"
 ];
 
-function zoekRecepten() {
-    const invoer = document
-        .getElementById("zoekveld")
-        .value.trim().toLowerCase();
+const landen = [
+    "België",
+    "Frankrijk",
+    "Italië",
+    "Thailand",
+    "Mexico",
+    "Japan",
+    "Marokko",
+    "Groot-Brittannië",
+    "Verenigde Staten",
+    "India"
+];
 
-    const resultaten = document
-        .getElementById("zoekresultaten");
+function aantalRecepten(veld, waarde) {
+    return recepten.filter(
+        r => r[veld] === waarde
+    ).length;
+}
 
-    resultaten.replaceChildren();
+function maakKaarten(waarden, veld, doelId) {
+    const doel = document.getElementById(doelId);
+    doel.replaceChildren();
 
-    if (invoer === "") {
-        return;
-    }
+    waarden.forEach(waarde => {
+        const aantal = aantalRecepten(veld, waarde);
 
-    const gevonden = recepten.filter(recept =>
-        recept.naam.toLowerCase().includes(invoer) ||
-        recept.land.toLowerCase().includes(invoer) ||
-        recept.categorie.toLowerCase().includes(invoer)
+        const kaart = document.createElement(
+            aantal > 0 ? "button" : "div"
+        );
+
+        kaart.className = "kaart";
+
+        if (aantal > 0) {
+            kaart.classList.add("kaart-actief");
+            kaart.type = "button";
+            kaart.onclick = () => {
+                toonRecepten(veld, waarde);
+            };
+        }
+
+        const titel = document.createElement("h3");
+        titel.textContent = waarde;
+
+        const info = document.createElement("p");
+        info.textContent = aantal === 0
+            ? "Nog geen recepten"
+            : aantal + (aantal === 1
+                ? " recept beschikbaar"
+                : " recepten beschikbaar");
+
+        kaart.append(titel, info);
+        doel.appendChild(kaart);
+    });
+}
+
+function toonRecepten(veld, waarde) {
+    const gevonden = recepten.filter(
+        r => r[veld] === waarde
     );
 
+    toonResultaten(
+        gevonden,
+        "Recepten: " + waarde
+    );
+}
+
+function toonResultaten(gevonden, titel) {
+    const sectie = document.getElementById(
+        "overzicht"
+    );
+
+    const lijst = document.getElementById(
+        "receptresultaten"
+    );
+
+    document.getElementById(
+        "overzichttitel"
+    ).textContent = titel;
+
+    lijst.replaceChildren();
+    sectie.hidden = false;
+
     if (gevonden.length === 0) {
-        resultaten.textContent =
-            "Geen recepten gevonden.";
-        return;
+        const melding = document.createElement("p");
+        melding.className = "melding";
+        melding.textContent = laadfout
+            ? "De receptenlijst kon niet worden geladen."
+            : "Geen recepten gevonden.";
+        lijst.appendChild(melding);
     }
 
     gevonden.forEach(recept => {
-        const regel = document.createElement("p");
+        const regel = document.createElement("div");
+        regel.className = "receptregel";
+
         const link = document.createElement("a");
+        link.href = recept.pagina;
+        link.textContent = recept.titel;
 
-        link.href = recept.url;
-        link.textContent = recept.naam;
-        link.style.color = "#244638";
-        link.style.fontWeight = "bold";
+        const info = document.createElement("p");
+        info.textContent =
+            recept.categorie + " | " +
+            recept.land + " | " +
+            recept.personen + " personen";
 
-        regel.appendChild(link);
-        resultaten.appendChild(regel);
+        regel.append(link, info);
+        lijst.appendChild(regel);
+    });
+
+    sectie.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
     });
 }
+
+function zoekRecepten() {
+    const invoer = document.getElementById(
+        "zoekveld"
+    ).value.trim().toLowerCase();
+
+    if (invoer === "") {
+        document.getElementById(
+            "overzicht"
+        ).hidden = true;
+        return;
+    }
+
+    const gevonden = recepten.filter(r =>
+        r.titel.toLowerCase().includes(invoer) ||
+        r.categorie.toLowerCase().includes(invoer) ||
+        r.land.toLowerCase().includes(invoer)
+    );
+
+    toonResultaten(gevonden, "Zoekresultaten");
+}
+
+async function laadRecepten() {
+    try {
+        const antwoord = await fetch(
+            "recepten.json",
+            { cache: "no-store" }
+        );
+
+        if (!antwoord.ok) {
+            throw new Error("Bestand niet gevonden");
+        }
+
+        const gegevens = await antwoord.json();
+
+        if (!Array.isArray(gegevens)) {
+            throw new Error("Ongeldige receptenlijst");
+        }
+
+        recepten = gegevens.filter(r =>
+            r.gepubliceerd === true &&
+            typeof r.titel === "string" &&
+            typeof r.categorie === "string" &&
+            typeof r.land === "string" &&
+            typeof r.pagina === "string"
+        );
+
+    } catch (fout) {
+        console.error(fout);
+        laadfout = true;
+    }
+
+    maakKaarten(
+        categorieen,
+        "categorie",
+        "categoriekaarten"
+    );
+
+    maakKaarten(
+        landen,
+        "land",
+        "landkaarten"
+    );
+}
+
+laadRecepten();
 </script>
 
 </body>
