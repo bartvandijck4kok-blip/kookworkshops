@@ -2,132 +2,296 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Van Dijck Bart | Kookworkshops</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<title>Van Dijck Bart | Recepten & Kookworkshops</title>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #faf7f0;
-            color: #283b30;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        header {
-            background-color: #eee5d6;
-            text-align: center;
-            padding: 30px 20px;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        header img {
-            display: block;
-            width: 100%;
-            max-width: 650px;
-            height: auto;
-            margin: 0 auto;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #faf7f0;
+    color: #283b30;
+    line-height: 1.6;
+}
 
-        nav {
-            background-color: #244638;
-            padding: 16px;
-            text-align: center;
-        }
+/* Logo */
+header {
+    background: #eee5d6;
+    text-align: center;
+    padding: 25px 20px;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 18px;
-            font-weight: bold;
-        }
+header img {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+/* Navigatie */
+nav {
+    background: #244638;
+    text-align: center;
+    padding: 16px;
+}
 
-        main {
-            max-width: 950px;
-            margin: 45px auto;
-            padding: 0 25px;
-            text-align: center;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+}
 
-        h1 {
-            color: #244638;
-        }
+nav a:hover {
+    text-decoration: underline;
+}
 
-        footer {
-            background-color: #244638;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 60px;
-        }
+/* Inhoud */
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 20px;
+}
 
-        @media (max-width: 600px) {
-            nav a {
-                display: inline-block;
-                margin: 8px;
-            }
-        }
-    </style>
+h1, h2 {
+    color: #244638;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.intro h1 {
+    font-size: 32px;
+}
+
+/* Zoekveld */
+.zoeken {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.zoeken input {
+    width: 100%;
+    max-width: 500px;
+    padding: 14px;
+    border: 1px solid #b6b6a9;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+/* Kaarten */
+.kaarten {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(190px, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.kaart {
+    background: white;
+    border: 1px solid #e1d9ca;
+    border-radius: 10px;
+    padding: 25px 15px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.kaart h3 {
+    color: #244638;
+    margin: 0;
+}
+
+.kaart p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Secties */
+section {
+    margin-bottom: 55px;
+}
+
+.sectie-titel {
+    border-bottom: 2px solid #c9b99c;
+    padding-bottom: 8px;
+}
+
+/* Footer */
+footer {
+    background: #244638;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    .intro h1 {
+        font-size: 26px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <img
-            src="Van%20Dijck%20Bart%20logo%20%28150dpi%29.png"
-            alt="Van Dijck Bart - Kookworkshops"
-        >
-    </header>
+<header>
+    <img
+      src="Van%20Dijck%20Bart%20logo%20%28150dpi%29.png"
+      alt="Van Dijck Bart - Kookworkshops">
+</header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="#over">Over mij</a>
-        <a href="#workshops">Workshops</a>
-        <a href="#recepten">Recepten</a>
-    </nav>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="#categorieen">Recepten</a>
+    <a href="#landen">Landen</a>
+    <a href="#workshops">Workshops</a>
+    <a href="#over">Over mij</a>
+</nav>
 
-    <main>
-        <h1>Welkom bij Van Dijck Bart</h1>
-        <p>
-            Ontdek mijn passie voor koken, smaken
-            en het samen bereiden van heerlijke gerechten.
-        </p>
+<main>
 
-        <section id="over">
-            <h2>Over mij</h2>
-            <p>
-                Koken, ontdekken en kennis delen
-                staan centraal in mijn kookworkshops.
-            </p>
-        </section>
+<section class="intro">
+    <h1>Welkom in mijn receptenkeuken</h1>
 
-        <section id="workshops">
-            <h2>Kookworkshops</h2>
-            <p>
-                Binnenkort vind je hier meer informatie
-                over mijn kookworkshops.
-            </p>
-        </section>
+    <p>
+        Ontdek heerlijke gerechten, culinaire
+        inspiratie en recepten uit verschillende
+        landen en keukens.
+    </p>
 
-        <section id="recepten">
-            <h2>Recepten</h2>
-            <p>
-                Hier verschijnt later een selectie
-                van mijn favoriete recepten.
-            </p>
-        </section>
-    </main>
+    <div class="zoeken">
+        <input
+          type="search"
+          id="zoekveld"
+          placeholder="Zoek een recept..."
+          aria-label="Zoek een recept"
+          oninput="zoekRecepten()">
+        <p id="zoekmelding" aria-live="polite"></p>
+    </div>
+</section>
 
-    <footer>
-        &copy; 2026 Van Dijck Bart - Kookworkshops
-    </footer>
+<section id="categorieen">
+    <h2 class="sectie-titel">
+        Recepten per categorie
+    </h2>
+
+    <div class="kaarten">
+        <div class="kaart">
+            <h3>Aperitief & hapjes</h3>
+            <p>Ontdek de recepten</p>
+        </div>
+
+        <div class="kaart">
+            <h3>Voorgerechten</h3>
+            <p>Ontdek de recepten</p>
+        </div>
+
+        <div class="kaart">
+            <h3>Hoofdgerechten</h3>
+            <p>Ontdek de recepten</p>
+        </div>
+
+        <div class="kaart">
+            <h3>Bijgerechten</h3>
+            <p>Ontdek de recepten</p>
+        </div>
+
+        <div class="kaart">
+            <h3>Desserts</h3>
+            <p>Ontdek de recepten</p>
+        </div>
+
+        <div class="kaart">
+            <h3>Basisbereidingen</h3>
+            <p>Ontdek de recepten</p>
+        </div>
+    </div>
+</section>
+
+<section id="landen">
+    <h2 class="sectie-titel">
+        Recepten per land
+    </h2>
+
+    <div class="kaarten">
+        <div class="kaart"><h3>België</h3></div>
+        <div class="kaart"><h3>Frankrijk</h3></div>
+        <div class="kaart"><h3>Italië</h3></div>
+        <div class="kaart"><h3>Thailand</h3></div>
+        <div class="kaart"><h3>Mexico</h3></div>
+        <div class="kaart"><h3>Japan</h3></div>
+        <div class="kaart"><h3>Marokko</h3></div>
+        <div class="kaart"><h3>Groot-Brittannië</h3></div>
+        <div class="kaart"><h3>Verenigde Staten</h3></div>
+        <div class="kaart"><h3>India</h3></div>
+    </div>
+</section>
+
+<section id="workshops">
+    <h2 class="sectie-titel">Kookworkshops</h2>
+
+    <p>
+        Naast mijn recepten vind je hier later
+        informatie over mijn kookworkshops,
+        thema-avonden en culinaire ontdekkingen.
+    </p>
+</section>
+
+<section id="over">
+    <h2 class="sectie-titel">Over mij</h2>
+
+    <p>
+        Welkom! Ik deel graag mijn passie voor
+        koken, nieuwe smaken en het ontdekken
+        van gerechten uit de hele wereld.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    &copy; 2026 Van Dijck Bart |
+    Recepten & Kookworkshops
+</footer>
+
+<script>
+function zoekRecepten() {
+    const invoer = document
+        .getElementById("zoekveld")
+        .value.trim();
+
+    const melding = document
+        .getElementById("zoekmelding");
+
+    if (invoer.length === 0) {
+        melding.textContent = "";
+    } else {
+        melding.textContent =
+            "Binnenkort kun je hier zoeken " +
+            "in mijn receptenbibliotheek.";
+    }
+}
+</script>
 
 </body>
 </html>
