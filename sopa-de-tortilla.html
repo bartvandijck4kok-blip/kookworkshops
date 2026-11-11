@@ -7,6 +7,67 @@
 
 <title>Sopa de tortilla | Van Dijck Bart</title>
 
+/* Afdrukopmaak */
+@media print {
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+
+    body {
+        background: white;
+        color: black;
+        font-size: 11pt;
+        line-height: 1.4;
+    }
+
+    header, nav, footer,
+    .porties, .terug,
+    .afdrukknop, .opmerking {
+        display: none !important;
+    }
+
+    main {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 20pt;
+        margin: 0 0 5mm;
+    }
+
+    h2 {
+        font-size: 14pt;
+        margin: 0 0 3mm;
+    }
+
+    .receptblok {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin-bottom: 7mm;
+    }
+
+    .ingredienten {
+        columns: 2;
+    }
+
+    .ingredienten li {
+        margin-bottom: 2mm;
+    }
+
+    .bereiding li {
+        margin-bottom: 3mm;
+        break-inside: avoid;
+    }
+
+    .receptblok h2 {
+        break-after: avoid;
+    }
+}
+
 <style>
 * {
     box-sizing: border-box;
@@ -220,6 +281,23 @@ footer {
           aria-label="Eén persoon meer">+</button>
     </div>
 </div>
+
+<button
+    type="button"
+    class="afdrukknop"
+    onclick="window.print()"
+    style="
+        background: #244638;
+        color: white;
+        border: none;
+        border-radius: 7px;
+        padding: 12px 22px;
+        margin-bottom: 25px;
+        font-size: 16px;
+        cursor: pointer;
+    ">
+    🖨 Recept afdrukken
+</button>
 
 <section class="receptblok">
 <h2>Ingrediënten</h2>
