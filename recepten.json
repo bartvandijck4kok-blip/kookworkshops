@@ -25,5 +25,14 @@
         "personen":  4,
         "pagina":  "tiramisu-van-de-paters.html",
         "gepubliceerd":  true
+    },
+    {
+        "id":  2,
+        "titel":  "Komkommergazpacho",
+        "categorie":  "Voorgerecht",
+        "land":  "België",
+        "personen":  4,
+        "pagina":  "komkommergazpacho.html",
+        "gepubliceerd":  true
     }
 ]
