@@ -1,21 +1,29 @@
-
 [
-  {
-    "id": 1,
-    "titel": "Sopa de tortilla",
-    "categorie": "Voorgerecht",
-    "land": "Mexico",
-    "personen": 4,
-    "pagina": "sopa-de-tortilla.html",
-    "gepubliceerd": true
-  },
-  {
-    "id": 2,
-    "titel": "Varkensfilet met Westmalle dubbel",
-    "categorie": "Hoofdgerecht",
-    "land": "België",
-    "personen": 4,
-    "pagina": "varkensfilet-met-westmalle-dubbel.html",
-    "gepubliceerd": true
-  }
+    {
+        "id":  1,
+        "titel":  "Sopa de tortilla",
+        "categorie":  "Voorgerecht",
+        "land":  "Mexico",
+        "personen":  4,
+        "pagina":  "sopa-de-tortilla.html",
+        "gepubliceerd":  true
+    },
+    {
+        "id":  2,
+        "titel":  "Varkensfilet met Westmalle dubbel",
+        "categorie":  "Hoofdgerecht",
+        "land":  "België",
+        "personen":  4,
+        "pagina":  "varkensfilet-met-westmalle-dubbel.html",
+        "gepubliceerd":  true
+    },
+    {
+        "id":  3,
+        "titel":  "Tiramisu van de paters",
+        "categorie":  "Dessert",
+        "land":  "België",
+        "personen":  4,
+        "pagina":  "tiramisu-van-de-paters.html",
+        "gepubliceerd":  true
+    }
 ]
