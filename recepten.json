@@ -43,5 +43,14 @@
         "personen":  4,
         "pagina":  "wrap-met-groene-asperges-geitenkaas-en-spek.html",
         "gepubliceerd":  true
+    },
+    {
+        "id":  6,
+        "titel":  "Asperges op Vlaamse wijze",
+        "categorie":  "Hoofdgerecht",
+        "land":  "België",
+        "personen":  4,
+        "pagina":  "asperges-op-vlaamse-wijze.html",
+        "gepubliceerd":  true
     }
 ]
