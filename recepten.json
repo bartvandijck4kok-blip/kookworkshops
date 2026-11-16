@@ -34,5 +34,14 @@
         "personen":  4,
         "pagina":  "komkommergazpacho.html",
         "gepubliceerd":  true
+    },
+    {
+        "id":  5,
+        "titel":  "Wrap met groene asperges, geitenkaas en spek",
+        "categorie":  "Voorgerecht",
+        "land":  "België",
+        "personen":  4,
+        "pagina":  "wrap-met-groene-asperges-geitenkaas-en-spek.html",
+        "gepubliceerd":  true
     }
 ]
