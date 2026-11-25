@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -201,7 +202,7 @@ footer {
 <nav>
     <a href="index.html">Home</a>
     <a href="#categorieen">Recepten</a>
-    <a href="#landen">Landen</a>
+
     <a href="#workshops">Workshops</a>
     <a href="#over">Over mij</a>
     <a href="#contact">Contact</a>
@@ -233,10 +234,6 @@ footer {
     <div class="kaarten" id="categoriekaarten"></div>
 </section>
 
-<section id="landen">
-    <h2 class="sectie-titel">Recepten per land</h2>
-    <div class="kaarten" id="landkaarten"></div>
-</section>
 
 <section id="overzicht" hidden>
     <h2 class="sectie-titel" id="overzichttitel">
@@ -336,18 +333,6 @@ const categorieen = [
     "Basisbereiding"
 ];
 
-const landen = [
-    "België",
-    "Frankrijk",
-    "Italië",
-    "Thailand",
-    "Mexico",
-    "Japan",
-    "Marokko",
-    "Groot-Brittannië",
-    "Verenigde Staten",
-    "India"
-];
 
 function aantalRecepten(veld, waarde) {
     return recepten.filter(
@@ -508,11 +493,6 @@ async function laadRecepten() {
         "categoriekaarten"
     );
 
-    maakKaarten(
-        landen,
-        "land",
-        "landkaarten"
-    );
 }
 
 laadRecepten();
