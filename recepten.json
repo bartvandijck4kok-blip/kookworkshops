@@ -142,5 +142,14 @@
         "personen":  4,
         "pagina":  "kuku-sabzi-met-kruidenyoghurt.html",
         "gepubliceerd":  true
+    },
+    {
+        "id":  1190,
+        "titel":  "Sholeh zard",
+        "categorie":  "Dessert",
+        "land":  "Iran",
+        "personen":  4,
+        "pagina":  "sholeh-zard.html",
+        "gepubliceerd":  true
     }
 ]
