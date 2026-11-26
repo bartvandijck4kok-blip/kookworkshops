@@ -1,0 +1,456 @@
+﻿
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kip-fesenjan met saffraanrijst | Van Dijck Bart</title>
+
+<style>
+
+/* Afdrukopmaak */
+@media print {
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+
+    body {
+        background: white;
+        color: black;
+        font-size: 9pt;
+        line-height: 1.25;
+    }
+
+    nav, footer,
+    .porties, .terug, .afdrukknop, .opmerking {
+        display: none !important;
+    }
+
+    main {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 17pt;
+        margin: 0 0 3mm;
+    }
+
+    h2 {
+        font-size: 12pt;
+        margin: 0 0 2mm;
+    }
+
+    .receptblok {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 4mm;
+}
+
+    .ingredienten {
+        columns: 2;
+    }
+
+    .ingredienten li {
+        margin-bottom: 1mm;
+    }
+
+    .bereiding li {
+        margin-bottom: 2mm;
+        break-inside: avoid;
+    }
+
+    .receptblok h2 {
+        break-after: avoid;
+    }
+    header {
+        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 0 3mm !important;
+    }
+
+    header img {
+        width: 110px !important;
+        height: auto !important;
+    }
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #faf7f0;
+    color: #283b30;
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+header {
+    background: #eee5d6;
+    padding: 22px;
+    text-align: center;
+}
+
+header img {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: auto;
+}
+
+nav {
+    background: #244638;
+    padding: 16px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 950px;
+    margin: 35px auto;
+    padding: 0 22px;
+}
+
+h1, h2 {
+    color: #244638;
+}
+
+.info {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.receptblok {
+    background: white;
+    border: 1px solid #e1d9ca;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.ingredienten {
+    columns: 2;
+    column-gap: 40px;
+    padding-left: 20px;
+}
+
+.ingredienten li {
+    break-inside: avoid;
+    margin-bottom: 8px;
+}
+
+.bereiding li {
+    margin-bottom: 18px;
+    padding-left: 5px;
+}
+
+/* Aantal personen */
+.porties {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    background: #eee5d6;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.porties strong {
+    margin-right: auto;
+}
+
+.portieknoppen {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.portieknoppen button {
+    background: #244638;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.portieknoppen button:hover {
+    background: #37634e;
+}
+
+.portieknoppen button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#personen {
+    min-width: 25px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.opmerking {
+    font-size: 13px;
+    color: #666;
+    margin-top: 15px;
+}
+
+.terug {
+    display: inline-block;
+    margin: 15px 0 30px;
+    color: #244638;
+    font-weight: bold;
+}
+
+footer {
+    background: #244638;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    .ingredienten {
+        columns: 1;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    .receptblok {
+        padding: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img
+      src="Van%20Dijck%20Bart%20logo%20%28150dpi%29.png"
+      alt="Van Dijck Bart - Kookworkshops">
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#categorieen">Recepten</a>
+    <a href="index.html#landen">Landen</a>
+    <a href="index.html#workshops">Workshops</a>
+    <a href="index.html#over">Over mij</a>
+</nav>
+
+<main>
+
+<h1>Kip-fesenjan met saffraanrijst</h1>
+
+<p class="info">
+    Iran | Hoofdgerecht | Basisrecept voor 4 personen
+</p>
+
+<div class="porties">
+    <strong>Aantal personen</strong>
+
+    <div class="portieknoppen">
+        <button
+          type="button"
+          id="minder"
+          onclick="wijzigPersonen(-1)"
+          aria-label="Eén persoon minder">−</button>
+
+        <span id="personen" aria-live="polite">4</span>
+
+        <button
+          type="button"
+          id="meer"
+          onclick="wijzigPersonen(1)"
+          aria-label="Eén persoon meer">+</button>
+    </div>
+</div>
+
+<button
+    type="button"
+    class="afdrukknop"
+    onclick="window.print()"
+    style="
+        background: #244638;
+        color: white;
+        border: none;
+        border-radius: 7px;
+        padding: 12px 22px;
+        margin-bottom: 25px;
+        font-size: 16px;
+        cursor: pointer;
+    ">
+    🖨 Recept afdrukken
+</button>
+
+<section class="receptblok">
+<h2>Ingrediënten</h2>
+
+<ul class="ingredienten" id="ingredientenlijst"></ul>
+
+<p class="opmerking">
+    De hoeveelheden worden evenredig aangepast.
+    Bij hele producten kunnen deelhoeveelheden
+    voorkomen. Rond deze zelf af waar nodig.
+</p>
+</section>
+
+<section class="receptblok">
+<h2>Bereiding</h2>
+
+<ol class="bereiding">
+    <li>Verwarm de oven voor op 170 °C.</li>
+    <li>Verdeel de walnoten over een bakplaat en rooster ze 10 tot 12 minuten.</li>
+    <li>Laat ze afkoelen en maal ze in een keukenmachine tot een grove, vochtige massa.</li>
+    <li>Pel de ui en snijd hem fijn.</li>
+    <li>Snijd de kippendijfilet in grote stukken en kruid met zout en zwarte peper.</li>
+    <li>Verhit olijfolie in een ruime stoofpot.</li>
+    <li>Bak de kip in enkele minuten rondom lichtbruin en neem ze uit de pot.</li>
+    <li>Fruit de ui ongeveer 8 minuten in dezelfde pot.</li>
+    <li>Voeg de kurkuma en kaneel toe en bak 1 minuut mee.</li>
+    <li>Roer de gemalen walnoten door de ui.</li>
+    <li>Voeg de kippenbouillon en 200 ml water toe en breng zachtjes aan de kook.</li>
+    <li>Laat de saus 45 minuten op zeer laag vuur sudderen.</li>
+    <li>Roer regelmatig over de bodem, zodat de walnoten niet aanzetten.</li>
+    <li>Voeg de granaatappelmelasse, suiker en aangebakken kip toe.</li>
+    <li>Laat de fesenjan nog 45 tot 60 minuten zacht sudderen tot de kip gaar is en de saus donker, dik en glanzend wordt.</li>
+    <li>Voeg tijdens het sudderen zo nodig een kleine hoeveelheid water toe.</li>
+    <li>Proef de fesenjan en kruid met zout en zwarte peper.
+Opmerking: De saus hoort een uitgesproken zoetzure smaak te hebben.</li>
+    <li>Spoel de basmatirijst onder koud water tot het spoelwater helder is.</li>
+    <li>Laat de rijst 20 minuten weken en giet hem af.</li>
+    <li>Verkruimel de saffraan en laat hem 10 minuten trekken in 30 ml kokend water.</li>
+    <li>Breng de rijst met 500 ml water en zout aan de kook.</li>
+    <li>Dek af, zet het vuur laag en laat 12 minuten garen.</li>
+    <li>Neem de pot van het vuur en laat de rijst nog 10 minuten afgedekt rusten.</li>
+    <li>Smelt de boter.</li>
+    <li>Meng ongeveer een derde van de gekookte rijst met de boter en het saffraanwater en schep deze gele rijst luchtig door de resterende witte rijst.</li>
+    <li>Serveer de kip-fesenjan met de saffraanrijst en werk af met de granaatappelpitten.</li>
+</ol>
+
+<p class="opmerking">
+    De bereidingsstappen zijn afkomstig
+    uit het oorspronkelijke recept voor
+    4 personen. Pas aantallen in de tekst
+    aan wanneer je het recept opschaalt.
+</p>
+</section>
+
+<a class="terug" href="index.html">
+    ← Terug naar alle recepten
+</a>
+
+</main>
+
+<footer>
+    &copy; 2026 Van Dijck Bart |
+    Recepten & Kookworkshops
+</footer>
+
+<script>
+const basisPersonen = 4;
+let aantalPersonen = 4;
+
+const ingredienten = [
+    { naam: "kippendijfilet", hoeveelheid: 600., eenheid: "g" },
+    { naam: "walnoten", hoeveelheid: 300., eenheid: "g" },
+    { naam: "ui", hoeveelheid: 200., eenheid: "g" },
+    { naam: "granaatappelmelasse", hoeveelheid: 120., eenheid: "ml" },
+    { naam: "kippenbouillon", hoeveelheid: 500., eenheid: "ml" },
+    { naam: "suiker", hoeveelheid: 30., eenheid: "g" },
+    { naam: "kurkuma", hoeveelheid: 2., eenheid: "g" },
+    { naam: "kaneel", hoeveelheid: 1., eenheid: "g" },
+    { naam: "basmatirijst", hoeveelheid: 300., eenheid: "g" },
+    { naam: "saffraan", hoeveelheid: 0.2, eenheid: "g" },
+    { naam: "boter", hoeveelheid: 30., eenheid: "g" },
+    { naam: "granaatappelpitten", hoeveelheid: 80., eenheid: "g" },
+    { naam: "olijfolie", hoeveelheid: null, eenheid: "" },
+    { naam: "zout", hoeveelheid: null, eenheid: "" },
+    { naam: "zwarte peper", hoeveelheid: null, eenheid: "" }
+];
+function formaatGetal(getal) {
+    return Number(getal.toFixed(2))
+        .toLocaleString("nl-BE", {
+            useGrouping: false,
+            maximumFractionDigits: 2
+        });
+}
+function toonIngredienten() {
+    const lijst = document.getElementById(
+        "ingredientenlijst"
+    );
+
+    lijst.replaceChildren();
+
+    ingredienten.forEach(ingredient => {
+        const regel = document.createElement("li");
+
+        if (ingredient.hoeveelheid === null) {
+            regel.textContent = ingredient.naam;
+        } else {
+            const hoeveelheid =
+                ingredient.hoeveelheid *
+                aantalPersonen / basisPersonen;
+
+            regel.textContent =
+                formaatGetal(hoeveelheid) + " " +
+                ingredient.eenheid + " " +
+                ingredient.naam;
+        }
+
+        lijst.appendChild(regel);
+    });
+
+    document.getElementById(
+        "personen"
+    ).textContent = aantalPersonen;
+
+    document.getElementById(
+        "minder"
+    ).disabled = aantalPersonen <= 1;
+
+    document.getElementById(
+        "meer"
+    ).disabled = aantalPersonen >= 20;
+}
+
+function wijzigPersonen(verschil) {
+    aantalPersonen = Math.max(
+        1,
+        Math.min(20, aantalPersonen + verschil)
+    );
+
+    toonIngredienten();
+}
+
+toonIngredienten();
+</script>
+
+</body>
+</html>
