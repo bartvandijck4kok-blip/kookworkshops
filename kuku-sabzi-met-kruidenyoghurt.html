@@ -1,0 +1,452 @@
+﻿
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kuku sabzi met kruidenyoghurt | Van Dijck Bart</title>
+
+<style>
+
+/* Afdrukopmaak */
+@media print {
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+
+    body {
+        background: white;
+        color: black;
+        font-size: 9pt;
+        line-height: 1.25;
+    }
+
+    nav, footer,
+    .porties, .terug, .afdrukknop, .opmerking {
+        display: none !important;
+    }
+
+    main {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 17pt;
+        margin: 0 0 3mm;
+    }
+
+    h2 {
+        font-size: 12pt;
+        margin: 0 0 2mm;
+    }
+
+    .receptblok {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 4mm;
+}
+
+    .ingredienten {
+        columns: 2;
+    }
+
+    .ingredienten li {
+        margin-bottom: 1mm;
+    }
+
+    .bereiding li {
+        margin-bottom: 2mm;
+        break-inside: avoid;
+    }
+
+    .receptblok h2 {
+        break-after: avoid;
+    }
+    header {
+        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 0 3mm !important;
+    }
+
+    header img {
+        width: 110px !important;
+        height: auto !important;
+    }
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #faf7f0;
+    color: #283b30;
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+header {
+    background: #eee5d6;
+    padding: 22px;
+    text-align: center;
+}
+
+header img {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: auto;
+}
+
+nav {
+    background: #244638;
+    padding: 16px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 950px;
+    margin: 35px auto;
+    padding: 0 22px;
+}
+
+h1, h2 {
+    color: #244638;
+}
+
+.info {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.receptblok {
+    background: white;
+    border: 1px solid #e1d9ca;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.ingredienten {
+    columns: 2;
+    column-gap: 40px;
+    padding-left: 20px;
+}
+
+.ingredienten li {
+    break-inside: avoid;
+    margin-bottom: 8px;
+}
+
+.bereiding li {
+    margin-bottom: 18px;
+    padding-left: 5px;
+}
+
+/* Aantal personen */
+.porties {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    background: #eee5d6;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.porties strong {
+    margin-right: auto;
+}
+
+.portieknoppen {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.portieknoppen button {
+    background: #244638;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.portieknoppen button:hover {
+    background: #37634e;
+}
+
+.portieknoppen button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#personen {
+    min-width: 25px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.opmerking {
+    font-size: 13px;
+    color: #666;
+    margin-top: 15px;
+}
+
+.terug {
+    display: inline-block;
+    margin: 15px 0 30px;
+    color: #244638;
+    font-weight: bold;
+}
+
+footer {
+    background: #244638;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    .ingredienten {
+        columns: 1;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    .receptblok {
+        padding: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img
+      src="Van%20Dijck%20Bart%20logo%20%28150dpi%29.png"
+      alt="Van Dijck Bart - Kookworkshops">
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#categorieen">Recepten</a>
+    <a href="index.html#landen">Landen</a>
+    <a href="index.html#workshops">Workshops</a>
+    <a href="index.html#over">Over mij</a>
+</nav>
+
+<main>
+
+<h1>Kuku sabzi met kruidenyoghurt</h1>
+
+<p class="info">
+    Iran | Voorgerecht | Basisrecept voor 4 personen
+</p>
+
+<div class="porties">
+    <strong>Aantal personen</strong>
+
+    <div class="portieknoppen">
+        <button
+          type="button"
+          id="minder"
+          onclick="wijzigPersonen(-1)"
+          aria-label="Eén persoon minder">−</button>
+
+        <span id="personen" aria-live="polite">4</span>
+
+        <button
+          type="button"
+          id="meer"
+          onclick="wijzigPersonen(1)"
+          aria-label="Eén persoon meer">+</button>
+    </div>
+</div>
+
+<button
+    type="button"
+    class="afdrukknop"
+    onclick="window.print()"
+    style="
+        background: #244638;
+        color: white;
+        border: none;
+        border-radius: 7px;
+        padding: 12px 22px;
+        margin-bottom: 25px;
+        font-size: 16px;
+        cursor: pointer;
+    ">
+    🖨 Recept afdrukken
+</button>
+
+<section class="receptblok">
+<h2>Ingrediënten</h2>
+
+<ul class="ingredienten" id="ingredientenlijst"></ul>
+
+<p class="opmerking">
+    De hoeveelheden worden evenredig aangepast.
+    Bij hele producten kunnen deelhoeveelheden
+    voorkomen. Rond deze zelf af waar nodig.
+</p>
+</section>
+
+<section class="receptblok">
+<h2>Bereiding</h2>
+
+<ol class="bereiding">
+    <li>Verwarm de oven voor op 180 °C.</li>
+    <li>Was de peterselie, koriander, dille en lente-ui.</li>
+    <li>Droog alle kruiden zeer zorgvuldig, zodat de kuku sabzi niet waterig wordt.</li>
+    <li>Hak de peterselie, koriander en dille fijn.</li>
+    <li>Snijd de lente-ui in fijne ringetjes.</li>
+    <li>Spoel de zuurbessen en laat ze 10 minuten weken in warm water.</li>
+    <li>Giet ze af en dep ze droog.</li>
+    <li>Hak de walnoten grof.</li>
+    <li>Klop de eieren los met de tarwebloem, het bakpoeder en de kurkuma.</li>
+    <li>Kruid met zout en zwarte peper.</li>
+    <li>Meng de fijngehakte kruiden, lente-ui, walnoten en zuurbessen door de eieren.
+Opmerking: het mengsel moet vooral uit kruiden bestaan en slechts door het ei worden gebonden.</li>
+    <li>Bestrijk een ovenvorm van ongeveer 24 cm met olijfolie.</li>
+    <li>Schep het mengsel in de vorm en strijk de bovenkant glad.</li>
+    <li>Bak de kuku sabzi 30 tot 35 minuten tot het midden is gestold en de bovenkant licht kleurt.</li>
+    <li>Rasp ondertussen de komkommer grof en druk er zoveel mogelijk vocht uit.</li>
+    <li>Pel en pers de look.</li>
+    <li>Meng de komkommer en look met de volle yoghurt en gedroogde munt.</li>
+    <li>Kruid de kruidenyoghurt met zout en bewaar koel.</li>
+    <li>Laat de kuku sabzi 10 minuten rusten.</li>
+    <li>Snijd hem in punten en serveer warm of op kamertemperatuur met de kruidenyoghurt.</li>
+</ol>
+
+<p class="opmerking">
+    De bereidingsstappen zijn afkomstig
+    uit het oorspronkelijke recept voor
+    4 personen. Pas aantallen in de tekst
+    aan wanneer je het recept opschaalt.
+</p>
+</section>
+
+<a class="terug" href="index.html">
+    ← Terug naar alle recepten
+</a>
+
+</main>
+
+<footer>
+    &copy; 2026 Van Dijck Bart |
+    Recepten & Kookworkshops
+</footer>
+
+<script>
+const basisPersonen = 4;
+let aantalPersonen = 4;
+
+const ingredienten = [
+    { naam: "platte peterselie", hoeveelheid: 120., eenheid: "g" },
+    { naam: "koriander", hoeveelheid: 80., eenheid: "g" },
+    { naam: "dille", hoeveelheid: 40., eenheid: "g" },
+    { naam: "lente-ui", hoeveelheid: 80., eenheid: "g" },
+    { naam: "eieren", hoeveelheid: 6., eenheid: "st" },
+    { naam: "walnoten", hoeveelheid: 30., eenheid: "g" },
+    { naam: "gedroogde zuurbessen", hoeveelheid: 20., eenheid: "g" },
+    { naam: "tarwebloem", hoeveelheid: 15., eenheid: "g" },
+    { naam: "bakpoeder", hoeveelheid: 3., eenheid: "g" },
+    { naam: "kurkuma", hoeveelheid: 2., eenheid: "g" },
+    { naam: "volle yoghurt", hoeveelheid: 250., eenheid: "g" },
+    { naam: "komkommer", hoeveelheid: 100., eenheid: "g" },
+    { naam: "look", hoeveelheid: 1., eenheid: "teen" },
+    { naam: "gedroogde munt", hoeveelheid: 5., eenheid: "g" },
+    { naam: "olijfolie", hoeveelheid: null, eenheid: "" },
+    { naam: "zout", hoeveelheid: null, eenheid: "" },
+    { naam: "zwarte peper", hoeveelheid: null, eenheid: "" }
+];
+function formaatGetal(getal) {
+    return Number(getal.toFixed(2))
+        .toLocaleString("nl-BE", {
+            useGrouping: false,
+            maximumFractionDigits: 2
+        });
+}
+function toonIngredienten() {
+    const lijst = document.getElementById(
+        "ingredientenlijst"
+    );
+
+    lijst.replaceChildren();
+
+    ingredienten.forEach(ingredient => {
+        const regel = document.createElement("li");
+
+        if (ingredient.hoeveelheid === null) {
+            regel.textContent = ingredient.naam;
+        } else {
+            const hoeveelheid =
+                ingredient.hoeveelheid *
+                aantalPersonen / basisPersonen;
+
+            regel.textContent =
+                formaatGetal(hoeveelheid) + " " +
+                ingredient.eenheid + " " +
+                ingredient.naam;
+        }
+
+        lijst.appendChild(regel);
+    });
+
+    document.getElementById(
+        "personen"
+    ).textContent = aantalPersonen;
+
+    document.getElementById(
+        "minder"
+    ).disabled = aantalPersonen <= 1;
+
+    document.getElementById(
+        "meer"
+    ).disabled = aantalPersonen >= 20;
+}
+
+function wijzigPersonen(verschil) {
+    aantalPersonen = Math.max(
+        1,
+        Math.min(20, aantalPersonen + verschil)
+    );
+
+    toonIngredienten();
+}
+
+toonIngredienten();
+</script>
+
+</body>
+</html>
