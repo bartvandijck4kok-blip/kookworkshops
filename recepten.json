@@ -70,5 +70,14 @@
         "personen":  8,
         "pagina":  "asperge-ijs-met-fruit.html",
         "gepubliceerd":  true
+    },
+    {
+        "id":  1000,
+        "titel":  "Asperges met amber bier",
+        "categorie":  "Voorgerecht",
+        "land":  "België",
+        "personen":  4,
+        "pagina":  "asperges-met-amber-bier.html",
+        "gepubliceerd":  true
     }
 ]
