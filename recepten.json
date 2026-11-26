@@ -61,5 +61,14 @@
         "personen":  15,
         "pagina":  "risotto-met-asperges-en-lamsfilet.html",
         "gepubliceerd":  true
+    },
+    {
+        "id":  8,
+        "titel":  "Asperge-ijs met fruit",
+        "categorie":  "Dessert",
+        "land":  "België",
+        "personen":  8,
+        "pagina":  "asperge-ijs-met-fruit.html",
+        "gepubliceerd":  true
     }
 ]
