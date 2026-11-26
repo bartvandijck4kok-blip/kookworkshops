@@ -52,5 +52,14 @@
         "personen":  4,
         "pagina":  "asperges-op-vlaamse-wijze.html",
         "gepubliceerd":  true
+    },
+    {
+        "id":  7,
+        "titel":  "Risotto met asperges en lamsfilet",
+        "categorie":  "Hoofdgerecht",
+        "land":  "België",
+        "personen":  15,
+        "pagina":  "risotto-met-asperges-en-lamsfilet.html",
+        "gepubliceerd":  true
     }
 ]
